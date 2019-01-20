@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F56C88221F1517200C3EAB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56C88121F1517200C3EAB8 /* AppDelegate.swift */; };
-		6F56C88421F1517200C3EAB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F56C88321F1517200C3EAB8 /* ViewController.swift */; };
-		6F56C88621F1517300C3EAB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F56C88521F1517300C3EAB8 /* Assets.xcassets */; };
-		6F56C88921F1517300C3EAB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F56C88721F1517300C3EAB8 /* Main.storyboard */; };
+		6F7958DC21F4848E00CDE14C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7958DB21F4848E00CDE14C /* AppDelegate.swift */; };
+		6F7958DE21F4848E00CDE14C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7958DD21F4848E00CDE14C /* ViewController.swift */; };
+		6F7958E021F4848F00CDE14C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7958DF21F4848F00CDE14C /* Assets.xcassets */; };
+		6F7958E321F4848F00CDE14C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F7958E121F4848F00CDE14C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6F56C87E21F1517200C3EAB8 /* AngularGradientView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngularGradientView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F56C88121F1517200C3EAB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F56C88321F1517200C3EAB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6F56C88521F1517300C3EAB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6F56C88821F1517300C3EAB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6F56C88A21F1517300C3EAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F7958D821F4848E00CDE14C /* YPRingProgressView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YPRingProgressView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7958DB21F4848E00CDE14C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6F7958DD21F4848E00CDE14C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6F7958DF21F4848F00CDE14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6F7958E221F4848F00CDE14C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6F7958E421F4848F00CDE14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6F56C87B21F1517200C3EAB8 /* Frameworks */ = {
+		6F7958D521F4848E00CDE14C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,97 +33,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F56C87521F1517200C3EAB8 = {
+		6F7958CF21F4848E00CDE14C = {
 			isa = PBXGroup;
 			children = (
-				6F56C88021F1517200C3EAB8 /* AngularGradientView */,
-				6F56C87F21F1517200C3EAB8 /* Products */,
+				6F7958DA21F4848E00CDE14C /* YPRingProgressView */,
+				6F7958D921F4848E00CDE14C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6F56C87F21F1517200C3EAB8 /* Products */ = {
+		6F7958D921F4848E00CDE14C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F56C87E21F1517200C3EAB8 /* AngularGradientView.app */,
+				6F7958D821F4848E00CDE14C /* YPRingProgressView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6F56C88021F1517200C3EAB8 /* AngularGradientView */ = {
+		6F7958DA21F4848E00CDE14C /* YPRingProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				6F56C88121F1517200C3EAB8 /* AppDelegate.swift */,
-				6F56C88721F1517300C3EAB8 /* Main.storyboard */,
-				6F56C89421F1519800C3EAB8 /* Views */,
-				6F56C89321F1519100C3EAB8 /* Controllers */,
-				6F56C89221F1518800C3EAB8 /* Supporting Files */,
-				6F56C89121F1518100C3EAB8 /* Resources */,
+				6F7958DB21F4848E00CDE14C /* AppDelegate.swift */,
+				6F7958E121F4848F00CDE14C /* Main.storyboard */,
+				6F7958EC21F4851C00CDE14C /* Controllers */,
+				6F7958EB21F4851600CDE14C /* Views */,
+				6F7958EE21F4852E00CDE14C /* Supporting Files */,
+				6F7958ED21F4852600CDE14C /* Resources */,
 			);
-			path = AngularGradientView;
+			path = YPRingProgressView;
 			sourceTree = "<group>";
 		};
-		6F56C89121F1518100C3EAB8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6F56C88521F1517300C3EAB8 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		6F56C89221F1518800C3EAB8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6F56C88A21F1517300C3EAB8 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6F56C89321F1519100C3EAB8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				6F56C88321F1517200C3EAB8 /* ViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		6F56C89421F1519800C3EAB8 /* Views */ = {
+		6F7958EB21F4851600CDE14C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6F7958EC21F4851C00CDE14C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F7958DD21F4848E00CDE14C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6F7958ED21F4852600CDE14C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F7958DF21F4848F00CDE14C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6F7958EE21F4852E00CDE14C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F7958E421F4848F00CDE14C /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6F56C87D21F1517200C3EAB8 /* AngularGradientView */ = {
+		6F7958D721F4848E00CDE14C /* YPRingProgressView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F56C88E21F1517300C3EAB8 /* Build configuration list for PBXNativeTarget "AngularGradientView" */;
+			buildConfigurationList = 6F7958E821F4848F00CDE14C /* Build configuration list for PBXNativeTarget "YPRingProgressView" */;
 			buildPhases = (
-				6F56C87A21F1517200C3EAB8 /* Sources */,
-				6F56C87B21F1517200C3EAB8 /* Frameworks */,
-				6F56C87C21F1517200C3EAB8 /* Resources */,
+				6F7958D421F4848E00CDE14C /* Sources */,
+				6F7958D521F4848E00CDE14C /* Frameworks */,
+				6F7958D621F4848E00CDE14C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AngularGradientView;
-			productName = AngularGradientView;
-			productReference = 6F56C87E21F1517200C3EAB8 /* AngularGradientView.app */;
+			name = YPRingProgressView;
+			productName = YPRingProgressView;
+			productReference = 6F7958D821F4848E00CDE14C /* YPRingProgressView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6F56C87621F1517200C3EAB8 /* Project object */ = {
+		6F7958D021F4848E00CDE14C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Zhenya Peteliev";
 				TargetAttributes = {
-					6F56C87D21F1517200C3EAB8 = {
+					6F7958D721F4848E00CDE14C = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -133,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6F56C87921F1517200C3EAB8 /* Build configuration list for PBXProject "AngularGradientView" */;
+			buildConfigurationList = 6F7958D321F4848E00CDE14C /* Build configuration list for PBXProject "YPRingProgressView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -141,45 +141,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 6F56C87521F1517200C3EAB8;
-			productRefGroup = 6F56C87F21F1517200C3EAB8 /* Products */;
+			mainGroup = 6F7958CF21F4848E00CDE14C;
+			productRefGroup = 6F7958D921F4848E00CDE14C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6F56C87D21F1517200C3EAB8 /* AngularGradientView */,
+				6F7958D721F4848E00CDE14C /* YPRingProgressView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6F56C87C21F1517200C3EAB8 /* Resources */ = {
+		6F7958D621F4848E00CDE14C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F56C88621F1517300C3EAB8 /* Assets.xcassets in Resources */,
-				6F56C88921F1517300C3EAB8 /* Main.storyboard in Resources */,
+				6F7958E021F4848F00CDE14C /* Assets.xcassets in Resources */,
+				6F7958E321F4848F00CDE14C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6F56C87A21F1517200C3EAB8 /* Sources */ = {
+		6F7958D421F4848E00CDE14C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F56C88421F1517200C3EAB8 /* ViewController.swift in Sources */,
-				6F56C88221F1517200C3EAB8 /* AppDelegate.swift in Sources */,
+				6F7958DE21F4848E00CDE14C /* ViewController.swift in Sources */,
+				6F7958DC21F4848E00CDE14C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6F56C88721F1517300C3EAB8 /* Main.storyboard */ = {
+		6F7958E121F4848F00CDE14C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6F56C88821F1517300C3EAB8 /* Base */,
+				6F7958E221F4848F00CDE14C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6F56C88C21F1517300C3EAB8 /* Debug */ = {
+		6F7958E621F4848F00CDE14C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,7 +248,7 @@
 			};
 			name = Debug;
 		};
-		6F56C88D21F1517300C3EAB8 /* Release */ = {
+		6F7958E721F4848F00CDE14C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -302,37 +302,37 @@
 			};
 			name = Release;
 		};
-		6F56C88F21F1517300C3EAB8 /* Debug */ = {
+		6F7958E921F4848F00CDE14C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q7G6BLSVJ2;
-				INFOPLIST_FILE = "$(SRCROOT)/AngularGradientView/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/YPRingProgressView/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zhenya.peteliev.AngularGradientView;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenya.peteliev.YPRingProgressView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		6F56C89021F1517300C3EAB8 /* Release */ = {
+		6F7958EA21F4848F00CDE14C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q7G6BLSVJ2;
-				INFOPLIST_FILE = "$(SRCROOT)/AngularGradientView/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/YPRingProgressView/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zhenya.peteliev.AngularGradientView;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenya.peteliev.YPRingProgressView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -341,25 +341,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6F56C87921F1517200C3EAB8 /* Build configuration list for PBXProject "AngularGradientView" */ = {
+		6F7958D321F4848E00CDE14C /* Build configuration list for PBXProject "YPRingProgressView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F56C88C21F1517300C3EAB8 /* Debug */,
-				6F56C88D21F1517300C3EAB8 /* Release */,
+				6F7958E621F4848F00CDE14C /* Debug */,
+				6F7958E721F4848F00CDE14C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6F56C88E21F1517300C3EAB8 /* Build configuration list for PBXNativeTarget "AngularGradientView" */ = {
+		6F7958E821F4848F00CDE14C /* Build configuration list for PBXNativeTarget "YPRingProgressView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F56C88F21F1517300C3EAB8 /* Debug */,
-				6F56C89021F1517300C3EAB8 /* Release */,
+				6F7958E921F4848F00CDE14C /* Debug */,
+				6F7958EA21F4848F00CDE14C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6F56C87621F1517200C3EAB8 /* Project object */;
+	rootObject = 6F7958D021F4848E00CDE14C /* Project object */;
 }

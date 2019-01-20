@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  AngularGradientView
+//  YPRingProgressView
 //
-//  Created by Zhenya Peteliev on 1/18/19.
+//  Created by Zhenya Peteliev on 1/20/19.
 //  Copyright © 2019 Zhenya Peteliev. All rights reserved.
 //
 
@@ -15,13 +15,5 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 

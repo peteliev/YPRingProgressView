@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  AngularGradientView
+//  YPRingProgressView
 //
-//  Created by Zhenya Peteliev on 1/18/19.
+//  Created by Zhenya Peteliev on 1/20/19.
 //  Copyright © 2019 Zhenya Peteliev. All rights reserved.
 //
 
