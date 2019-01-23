@@ -710,7 +710,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="zKW-vy-1Id" customClass="YPRingProgressView" customModule="YPRingProgressView" customModuleProvider="target">
-                                <rect key="frame" x="20" y="168" width="440" height="181"/>
+                                <rect key="frame" x="0.0" y="168" width="480" height="201"/>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-G0-fM9">
                                 <rect key="frame" x="18" y="119" width="444" height="19"/>
@@ -744,22 +744,22 @@
                             </slider>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FF7-tz-fvy" firstAttribute="leading" secondItem="zKW-vy-1Id" secondAttribute="leading" id="1N1-lj-C4Y"/>
-                            <constraint firstItem="VMi-G0-fM9" firstAttribute="leading" secondItem="zKW-vy-1Id" secondAttribute="leading" id="6Dl-am-ZxN"/>
-                            <constraint firstItem="zKW-vy-1Id" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="9N3-iU-TKK"/>
-                            <constraint firstItem="VMi-G0-fM9" firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" id="AyR-Zc-q0x"/>
-                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="leading" secondItem="zKW-vy-1Id" secondAttribute="leading" id="EjK-ty-rw2"/>
-                            <constraint firstItem="NCO-eG-v0p" firstAttribute="leading" secondItem="zKW-vy-1Id" secondAttribute="leading" id="F6M-dW-VHK"/>
-                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" id="FVJ-xP-h9Y"/>
-                            <constraint firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" constant="20" id="OIb-Xn-MnB"/>
+                            <constraint firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" constant="20" id="0YD-Fv-OVE"/>
+                            <constraint firstItem="NCO-eG-v0p" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="7kM-Pu-RI9"/>
+                            <constraint firstItem="zKW-vy-1Id" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9N3-iU-TKK"/>
+                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="BuO-PJ-rZK"/>
+                            <constraint firstItem="VMi-G0-fM9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="NiN-iV-Gs5"/>
+                            <constraint firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" id="OIb-Xn-MnB"/>
                             <constraint firstItem="FF7-tz-fvy" firstAttribute="top" secondItem="VMi-G0-fM9" secondAttribute="bottom" constant="10" id="PIi-NY-JdU"/>
                             <constraint firstAttribute="bottom" secondItem="NCO-eG-v0p" secondAttribute="bottom" constant="20" id="PmB-Ir-H7H"/>
-                            <constraint firstItem="FF7-tz-fvy" firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" id="QIl-AP-mha"/>
-                            <constraint firstItem="NCO-eG-v0p" firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" id="eoG-X0-01Y"/>
-                            <constraint firstItem="zKW-vy-1Id" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="gHN-ag-sZZ"/>
+                            <constraint firstItem="FF7-tz-fvy" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="XBl-fp-xEy"/>
+                            <constraint firstItem="zKW-vy-1Id" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="gHN-ag-sZZ"/>
+                            <constraint firstItem="NCO-eG-v0p" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="ij9-DW-4Yr"/>
                             <constraint firstItem="Dc7-YV-1Hc" firstAttribute="top" secondItem="FF7-tz-fvy" secondAttribute="bottom" constant="30" id="k4K-2K-nLF"/>
+                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="oiD-6B-5XG"/>
                             <constraint firstItem="NCO-eG-v0p" firstAttribute="top" secondItem="Dc7-YV-1Hc" secondAttribute="bottom" constant="10" id="pl4-X2-NaC"/>
                             <constraint firstItem="VMi-G0-fM9" firstAttribute="top" secondItem="zKW-vy-1Id" secondAttribute="bottom" constant="30" id="rUK-le-rhb"/>
+                            <constraint firstItem="FF7-tz-fvy" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="z4X-il-nch"/>
                         </constraints>
                     </view>
                     <connections>

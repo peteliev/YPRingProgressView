@@ -12,7 +12,7 @@ import Cocoa
 final public class YPRingProgressView: NSView {
     
     private struct Configuration {
-        static let ringRectInset: CGFloat = 0
+        static let ringRectInset: CGFloat = 30
     }
     
     // MARK: - Public Properties
@@ -57,8 +57,9 @@ final public class YPRingProgressView: NSView {
         setupRingForegroundLayer()
         setupRingForegroundMaskLayer()
         
-        [backgroundLayer, ringBackgroundLayer, ringForegroundLayer].forEach { rootLayer.addSublayer($0) }
-        
+        [backgroundLayer, ringBackgroundLayer, ringForegroundLayer]
+            .forEach { rootLayer.addSublayer($0) }
+       
         ringForegroundLayer.addSublayer(ringGradientLayer)
         ringForegroundLayer.mask = ringForegroundMaskLayer
     
@@ -96,7 +97,6 @@ private extension YPRingProgressView {
     func setupBackgroundLayer() {
         backgroundLayer.frame = bounds
         backgroundLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
-        
         backgroundLayer.disableActions(for: basicDisabledKeypathes)
     }
     
@@ -121,7 +121,6 @@ private extension YPRingProgressView {
     func setupRingForegroundLayer() {
         ringForegroundLayer.frame = bounds
         ringForegroundLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
-        
         ringForegroundLayer.disableActions(for: basicDisabledKeypathes)
     }
     
@@ -162,15 +161,17 @@ private extension YPRingProgressView {
     }
     
     func updateRingGradientImage() {
-        let ringRect = buildRingRect(from: bounds)
-        let ringRadius = ringRect.width / 2
+        let square = buildSquare(from: bounds)
+        let radius = square.width / 2
         
-        let gradientImage = buildGradientImage(from: ringStartColor, endColor: ringEndColor, radius: ringRadius)
+        let gradientImage = buildGradientImage(from: ringStartColor, endColor: ringEndColor, radius: radius)
         ringGradientLayer.contents = gradientImage
     }
     
     func updateProgressValue() {
+        let angle = 360 - (360 * progress)
         ringForegroundMaskLayer.strokeEnd = progress
+        ringGradientLayer.transform = CATransform3DMakeRotation(angle.degreesToRadians(), 0.0, 0.0, 1.0)
     }
     
     func updateColors() {
@@ -199,11 +200,14 @@ private extension YPRingProgressView {
     
     func buildRingRect(from rect: NSRect) -> NSRect {
         let inset = Configuration.ringRectInset
+        let square = buildSquare(from: rect)
+        return square.insetBy(dx: inset, dy: inset)
+    }
+    
+    func buildSquare(from rect: NSRect) -> NSRect {
         let minSide = min(bounds.width, bounds.height)
         let origin = NSPoint(x: (bounds.width - minSide) / 2, y: (bounds.height - minSide) / 2)
-        
-        let ringRect = NSRect(origin: origin, size: NSSize(width: minSide, height: minSide))
-        return ringRect.insetBy(dx: inset, dy: inset)
+        return NSRect(origin: origin, size: NSSize(width: minSide, height: minSide))
     }
     
     func buildGradientImage(from startColor: NSColor, endColor: NSColor, radius: CGFloat) -> NSImage {
