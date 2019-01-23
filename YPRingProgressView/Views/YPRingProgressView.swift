@@ -55,10 +55,12 @@ final public class YPRingProgressView: NSView {
         setupRingGradientLayer()
         setupRingBackgroundLayer()
         setupRingForegroundLayer()
+        setupRingForegroundMaskLayer()
         
+        [backgroundLayer, ringBackgroundLayer, ringForegroundLayer].forEach { rootLayer.addSublayer($0) }
         
-        [backgroundLayer, ringBackgroundLayer, ringGradientLayer].forEach { rootLayer.addSublayer($0) }
-        ringGradientLayer.mask = ringForegroundLayer
+        ringForegroundLayer.addSublayer(ringGradientLayer)
+        ringForegroundLayer.mask = ringForegroundMaskLayer
     
         updateColors()
         updateLayers()
@@ -69,8 +71,10 @@ final public class YPRingProgressView: NSView {
     private let rootLayer = CALayer()
     private let backgroundLayer = CALayer()
     private let ringBackgroundLayer = CAShapeLayer()
-    private let ringForegroundLayer = CAShapeLayer()
     private let ringGradientLayer = CALayer()
+    
+    private let ringForegroundLayer = CALayer()
+    private let ringForegroundMaskLayer = CAShapeLayer()
     
     // keypathes
     private let basicDisabledKeypathes = ["position", "frame", "bounds", "zPosition", "anchorPoint", "anchorPointZ", "contentsScale"]
@@ -105,19 +109,6 @@ private extension YPRingProgressView {
         ringBackgroundLayer.actions = ["lineWidth": CABasicAnimation(), "path": CABasicAnimation()]
     }
     
-    func setupRingForegroundLayer() {
-        ringForegroundLayer.frame = bounds
-        ringForegroundLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
-        
-        ringForegroundLayer.lineCap = .round
-        ringForegroundLayer.lineJoin = .round
-        ringForegroundLayer.fillColor = NSColor.clear.cgColor
-        ringForegroundLayer.strokeColor = NSColor.black.cgColor
-        
-        ringForegroundLayer.disableActions(for: basicDisabledKeypathes)
-        ringForegroundLayer.actions = ["lineWidth": CABasicAnimation(), "path": CABasicAnimation()]
-    }
-    
     func setupRingGradientLayer() {
         ringGradientLayer.frame = bounds
         ringGradientLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
@@ -125,6 +116,26 @@ private extension YPRingProgressView {
         
         let disabledKeypathes = basicDisabledKeypathes + ["contents"]
         ringGradientLayer.disableActions(for: disabledKeypathes)
+    }
+    
+    func setupRingForegroundLayer() {
+        ringForegroundLayer.frame = bounds
+        ringForegroundLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
+        
+        ringForegroundLayer.disableActions(for: basicDisabledKeypathes)
+    }
+    
+    func setupRingForegroundMaskLayer() {
+        ringForegroundMaskLayer.frame = bounds
+        ringForegroundMaskLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
+        
+        ringForegroundMaskLayer.lineCap = .round
+        ringForegroundMaskLayer.lineJoin = .round
+        ringForegroundMaskLayer.fillColor = NSColor.clear.cgColor
+        ringForegroundMaskLayer.strokeColor = NSColor.black.cgColor
+        
+        ringForegroundMaskLayer.disableActions(for: basicDisabledKeypathes)
+        ringForegroundMaskLayer.actions = ["lineWidth": CABasicAnimation(), "path": CABasicAnimation()]
     }
 }
 
@@ -143,9 +154,9 @@ private extension YPRingProgressView {
         
         let ringPath = buildRingPath(from: bounds, with: ringWidth)
         ringBackgroundLayer.path = ringPath.cgPath
-        ringForegroundLayer.path = ringPath.cgPath
+        ringForegroundMaskLayer.path = ringPath.cgPath
         ringBackgroundLayer.lineWidth = ringWidth
-        ringForegroundLayer.lineWidth = ringWidth
+        ringForegroundMaskLayer.lineWidth = ringWidth
         
         CATransaction.commit()
     }
@@ -159,7 +170,7 @@ private extension YPRingProgressView {
     }
     
     func updateProgressValue() {
-        ringForegroundLayer.strokeEnd = progress
+        ringForegroundMaskLayer.strokeEnd = progress
     }
     
     func updateColors() {
