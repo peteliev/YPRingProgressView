@@ -33,4 +33,8 @@ final public class ViewController: NSViewController {
     @IBAction func ringWidthSliderDidChangeValue(_ slider: NSSlider) {
         ringProgressView.ringWidth = CGFloat(slider.floatValue)
     }
+    
+    @IBAction func ringShadowOpacitySliderDidChangeValue(_ slider: NSSlider) {
+        ringProgressView.ringShadowOpacity = CGFloat(slider.floatValue)
+    }
 }

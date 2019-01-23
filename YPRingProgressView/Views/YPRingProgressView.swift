@@ -18,10 +18,13 @@ final public class YPRingProgressView: NSView {
     
     // MARK: - Public Properties
     @IBInspectable public var progress: CGFloat = 0 {
-        didSet { updateProgressValue() }
+        didSet { updateProgress() }
     }
     @IBInspectable public var ringWidth: CGFloat = 50 {
         didSet { updateRingWidth(animated: true) }
+    }
+    @IBInspectable public var ringShadowOpacity: CGFloat = 0 {
+        didSet { updateRingShadowOpacity(animated: true) }
     }
     
     @IBInspectable public var ringStartColor: NSColor = .red {
@@ -30,7 +33,7 @@ final public class YPRingProgressView: NSView {
     @IBInspectable public var ringEndColor: NSColor = .blue {
         didSet { updateRingGradientImage() }
     }
-    @IBInspectable public var ringBackgroundColor: NSColor = NSColor(hex: 0x2F1315) {
+    @IBInspectable public var ringBackgroundColor: NSColor = .white {
         didSet { updateRingBackgroundColor() }
     }
     @IBInspectable public var backgroundColor: NSColor = .green {
@@ -66,9 +69,9 @@ final public class YPRingProgressView: NSView {
         ringForegroundLayer.addSublayer(ringGradientLayer)
         ringGradientLayer.addSublayer(ringDotLayer)
     
-        updateColors()
         updateLayers()
-        updateProgressValue()
+        updateProgress()
+        updateAppearance()
     }
     
     // MARK: - Private Properties
@@ -142,6 +145,9 @@ private extension YPRingProgressView {
     }
     
     func setupRingDotLayer() {
+        ringDotLayer.shadowRadius = 5.0
+        ringDotLayer.shadowOffset = NSSize(width: -5, height: 0)
+        
         ringDotLayer.disableActions(for: basicDisabledKeypathes)
         ringDotLayer.actions = ["frame": CABasicAnimation(), "cornerRadius": CABasicAnimation()]
     }
@@ -151,7 +157,7 @@ private extension YPRingProgressView {
 // MARK: - Update Methods
 private extension YPRingProgressView {
     
-    func updateProgressValue() {
+    func updateProgress() {
         ringForegroundMaskLayer.strokeEnd = progress
 
         let angle = 360.0 - (360.0 * progress)
@@ -172,6 +178,28 @@ private extension YPRingProgressView {
         ringGradientLayer.contents = gradientImage
     }
     
+    func updateRingWidth(animated: Bool = false) {
+        CATransaction.begin()
+        CATransaction.setDisableActions(!animated)
+        
+        let ringPath = buildRingPath(from: bounds, with: ringWidth)
+        ringBackgroundLayer.path = ringPath.cgPath
+        ringBackgroundLayer.lineWidth = ringWidth
+        ringForegroundMaskLayer.path = ringPath.cgPath
+        ringForegroundMaskLayer.lineWidth = ringWidth
+        
+        updateDotLayer()
+        CATransaction.commit()
+    }
+    
+    func updateRingShadowOpacity(animated: Bool = false) {
+        CATransaction.begin()
+        CATransaction.setDisableActions(!animated)
+        
+        ringDotLayer.shadowOpacity = min(max(Float(ringShadowOpacity), 0.0), 1.0)
+        CATransaction.commit()
+    }
+    
     func updateDotLayer() {
         let spectrumColors = buildSpectrumColors(from: ringStartColor, endColor: ringEndColor)
         let numberOfColours = spectrumColors.count
@@ -190,24 +218,12 @@ private extension YPRingProgressView {
                                     width: ringWidthWithInset, height: ringWidthWithInset)
     }
     
-    func updateRingWidth(animated: Bool = false) {
-        CATransaction.begin()
-        CATransaction.setDisableActions(!animated)
-        
-        let ringPath = buildRingPath(from: bounds, with: ringWidth)
-        ringBackgroundLayer.path = ringPath.cgPath
-        ringBackgroundLayer.lineWidth = ringWidth
-        ringForegroundMaskLayer.path = ringPath.cgPath
-        ringForegroundMaskLayer.lineWidth = ringWidth
-        
-        updateDotLayer()
-        CATransaction.commit()
-    }
-    
-    func updateColors() {
+    func updateAppearance() {
         updateBackgroundColor()
         updateRingBackgroundColor()
+        
         updateRingGradientImage()
+        updateRingShadowOpacity()
     }
     
     func updateBackgroundColor() {
