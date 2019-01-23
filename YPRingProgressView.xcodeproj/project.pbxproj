@@ -11,6 +11,11 @@
 		6F7958DE21F4848E00CDE14C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7958DD21F4848E00CDE14C /* ViewController.swift */; };
 		6F7958E021F4848F00CDE14C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F7958DF21F4848F00CDE14C /* Assets.xcassets */; };
 		6F7958E321F4848F00CDE14C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F7958E121F4848F00CDE14C /* Main.storyboard */; };
+		6F7958F021F48B9C00CDE14C /* YPRingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7958EF21F48B9C00CDE14C /* YPRingProgressView.swift */; };
+		6F7958F321F53D0100CDE14C /* NSBezierPathExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7958F221F53D0100CDE14C /* NSBezierPathExt.swift */; };
+		6F7958F521F54A0D00CDE14C /* NSColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7958F421F54A0D00CDE14C /* NSColorExt.swift */; };
+		6FB331BD21F7D48D00913F6B /* CGFloatExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB331BC21F7D48D00913F6B /* CGFloatExt.swift */; };
+		6FE3686621F7583E00C62E20 /* CALayerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE3686521F7583E00C62E20 /* CALayerExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		6F7958DF21F4848F00CDE14C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F7958E221F4848F00CDE14C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F7958E421F4848F00CDE14C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F7958EF21F48B9C00CDE14C /* YPRingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YPRingProgressView.swift; sourceTree = "<group>"; };
+		6F7958F221F53D0100CDE14C /* NSBezierPathExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBezierPathExt.swift; sourceTree = "<group>"; };
+		6F7958F421F54A0D00CDE14C /* NSColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorExt.swift; sourceTree = "<group>"; };
+		6FB331BC21F7D48D00913F6B /* CGFloatExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExt.swift; sourceTree = "<group>"; };
+		6FE3686521F7583E00C62E20 /* CALayerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +64,9 @@
 			children = (
 				6F7958DB21F4848E00CDE14C /* AppDelegate.swift */,
 				6F7958E121F4848F00CDE14C /* Main.storyboard */,
-				6F7958EC21F4851C00CDE14C /* Controllers */,
 				6F7958EB21F4851600CDE14C /* Views */,
+				6F7958EC21F4851C00CDE14C /* Controllers */,
+				6F7958F121F53CEB00CDE14C /* Extensions */,
 				6F7958EE21F4852E00CDE14C /* Supporting Files */,
 				6F7958ED21F4852600CDE14C /* Resources */,
 			);
@@ -65,6 +76,7 @@
 		6F7958EB21F4851600CDE14C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6F7958EF21F48B9C00CDE14C /* YPRingProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +103,17 @@
 				6F7958E421F4848F00CDE14C /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6F7958F121F53CEB00CDE14C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6FB331BC21F7D48D00913F6B /* CGFloatExt.swift */,
+				6FE3686521F7583E00C62E20 /* CALayerExt.swift */,
+				6F7958F421F54A0D00CDE14C /* NSColorExt.swift */,
+				6F7958F221F53D0100CDE14C /* NSBezierPathExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F7958DE21F4848E00CDE14C /* ViewController.swift in Sources */,
+				6F7958F321F53D0100CDE14C /* NSBezierPathExt.swift in Sources */,
+				6F7958F021F48B9C00CDE14C /* YPRingProgressView.swift in Sources */,
+				6F7958F521F54A0D00CDE14C /* NSColorExt.swift in Sources */,
+				6FB331BD21F7D48D00913F6B /* CGFloatExt.swift in Sources */,
 				6F7958DC21F4848E00CDE14C /* AppDelegate.swift in Sources */,
+				6FE3686621F7583E00C62E20 /* CALayerExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

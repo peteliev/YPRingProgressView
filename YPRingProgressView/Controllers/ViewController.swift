@@ -8,12 +8,29 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
-
-    override func viewDidLoad() {
+final public class ViewController: NSViewController {
+    
+    @IBOutlet weak var progressSlider: NSSlider!
+    @IBOutlet weak var ringWidthSlider: NSSlider!
+    @IBOutlet weak var ringProgressView: YPRingProgressView!
+    
+    override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup background color
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.white.cgColor
+        
+        // setup ringProgressView
+        ringProgressView.progress = CGFloat(progressSlider.floatValue)
+        ringProgressView.ringWidth = CGFloat(ringWidthSlider.floatValue)
+    }
 
-        // Do any additional setup after loading the view.
+    @IBAction func progressSliderDidChangeValue(_ slider: NSSlider) {
+        ringProgressView.progress = CGFloat(slider.floatValue)
+    }
+    
+    @IBAction func ringWidthSliderDidChangeValue(_ slider: NSSlider) {
+        ringProgressView.ringWidth = CGFloat(slider.floatValue)
     }
 }
-
