@@ -13,6 +13,7 @@ final public class YPRingProgressView: NSView {
     
     private struct Configuration {
         static let ringRectInset: CGFloat = 30
+        static let numberOfSpectrumColours: Int = 360
     }
     
     // MARK: - Public Properties
@@ -56,12 +57,14 @@ final public class YPRingProgressView: NSView {
         setupRingBackgroundLayer()
         setupRingForegroundLayer()
         setupRingForegroundMaskLayer()
+        setupRingDotLayer()
         
         [backgroundLayer, ringBackgroundLayer, ringForegroundLayer]
             .forEach { rootLayer.addSublayer($0) }
        
-        ringForegroundLayer.addSublayer(ringGradientLayer)
         ringForegroundLayer.mask = ringForegroundMaskLayer
+        ringForegroundLayer.addSublayer(ringGradientLayer)
+        ringGradientLayer.addSublayer(ringDotLayer)
     
         updateColors()
         updateLayers()
@@ -74,6 +77,7 @@ final public class YPRingProgressView: NSView {
     private let ringBackgroundLayer = CAShapeLayer()
     private let ringGradientLayer = CALayer()
     
+    private let ringDotLayer = CALayer()
     private let ringForegroundLayer = CALayer()
     private let ringForegroundMaskLayer = CAShapeLayer()
     
@@ -136,15 +140,54 @@ private extension YPRingProgressView {
         ringForegroundMaskLayer.disableActions(for: basicDisabledKeypathes)
         ringForegroundMaskLayer.actions = ["lineWidth": CABasicAnimation(), "path": CABasicAnimation()]
     }
+    
+    func setupRingDotLayer() {
+        ringDotLayer.disableActions(for: basicDisabledKeypathes)
+        ringDotLayer.actions = ["frame": CABasicAnimation(), "cornerRadius": CABasicAnimation()]
+    }
 }
 
 
 // MARK: - Update Methods
 private extension YPRingProgressView {
     
+    func updateProgressValue() {
+        ringForegroundMaskLayer.strokeEnd = progress
+
+        let angle = 360.0 - (360.0 * progress)
+        ringGradientLayer.transform = CATransform3DMakeRotation(angle.degreesToRadians(), 0.0, 0.0, 1.0)
+    }
+    
     func updateLayers() {
         updateRingWidth()
         updateRingGradientImage()
+    }
+    
+    func updateRingGradientImage() {
+        let spectrumColors = buildSpectrumColors(from: ringStartColor, endColor: ringEndColor)
+        let square = buildSquare(from: bounds)
+        let radius = square.width / 2
+        
+        let gradientImage = buildGradientImage(from: spectrumColors, radius: radius)
+        ringGradientLayer.contents = gradientImage
+    }
+    
+    func updateDotLayer() {
+        let spectrumColors = buildSpectrumColors(from: ringStartColor, endColor: ringEndColor)
+        let numberOfColours = spectrumColors.count
+        let ringRect = buildRingRect(from: bounds)
+        let ringDimension = ringRect.width
+        let ringWidthWithInset = ringWidth + ringWidth / 15
+        
+        let containsDot = 2 * CGFloat.pi * ringDimension / ringWidthWithInset
+        let colorIndex = Int((CGFloat(numberOfColours) / containsDot) * (containsDot - 0.5))
+        let closestColor = spectrumColors[colorIndex]
+        
+        ringDotLayer.backgroundColor = closestColor.cgColor
+        ringDotLayer.cornerRadius = ringWidthWithInset / 2
+        ringDotLayer.frame = CGRect(x: ringRect.origin.x + (ringDimension - ringWidthWithInset) / 2,
+                                    y: ringRect.origin.y + ringDimension - ringWidthWithInset + (ringWidthWithInset - ringWidth) / 2,
+                                    width: ringWidthWithInset, height: ringWidthWithInset)
     }
     
     func updateRingWidth(animated: Bool = false) {
@@ -153,25 +196,12 @@ private extension YPRingProgressView {
         
         let ringPath = buildRingPath(from: bounds, with: ringWidth)
         ringBackgroundLayer.path = ringPath.cgPath
-        ringForegroundMaskLayer.path = ringPath.cgPath
         ringBackgroundLayer.lineWidth = ringWidth
+        ringForegroundMaskLayer.path = ringPath.cgPath
         ringForegroundMaskLayer.lineWidth = ringWidth
         
+        updateDotLayer()
         CATransaction.commit()
-    }
-    
-    func updateRingGradientImage() {
-        let square = buildSquare(from: bounds)
-        let radius = square.width / 2
-        
-        let gradientImage = buildGradientImage(from: ringStartColor, endColor: ringEndColor, radius: radius)
-        ringGradientLayer.contents = gradientImage
-    }
-    
-    func updateProgressValue() {
-        let angle = 360 - (360 * progress)
-        ringForegroundMaskLayer.strokeEnd = progress
-        ringGradientLayer.transform = CATransform3DMakeRotation(angle.degreesToRadians(), 0.0, 0.0, 1.0)
     }
     
     func updateColors() {
@@ -210,24 +240,8 @@ private extension YPRingProgressView {
         return NSRect(origin: origin, size: NSSize(width: minSide, height: minSide))
     }
     
-    func buildGradientImage(from startColor: NSColor, endColor: NSColor, radius: CGFloat) -> NSImage {
-        var spectrumColors = [NSColor]()
-        var (fromRed, fromGreen, fromBlue) = (CGFloat(0.0), CGFloat(0.0), CGFloat(0.0))
-        var (toRed, toGreen, toBlue) = (CGFloat(0.0), CGFloat(0.0), CGFloat(0.0))
-        
-        startColor.getRed(&fromRed, green: &fromGreen, blue: &fromBlue, alpha: nil)
-        endColor.getRed(&toRed, green: &toGreen, blue: &toBlue, alpha: nil)
-        
-        let numberOfColours = 360;
-        let dRed = (toRed - fromRed) / CGFloat(numberOfColours - 1)
-        let dGreen = (toGreen - fromGreen) / CGFloat(numberOfColours - 1)
-        let dBlue = (toBlue - fromBlue) / CGFloat(numberOfColours - 1)
-        
-        for n in 0..<numberOfColours {
-            spectrumColors.append(NSColor(red: fromRed + CGFloat(n) * dRed,
-                                          green: fromGreen + CGFloat(n) * dGreen,
-                                          blue: fromBlue + CGFloat(n) * dBlue, alpha: 1.0))
-        }
+    func buildGradientImage(from spectrumColors: [NSColor], radius: CGFloat) -> NSImage {
+        let numberOfColours = spectrumColors.count
         
         let diameter = radius * 2
         let center = NSPoint(x: radius, y: radius)
@@ -253,6 +267,28 @@ private extension YPRingProgressView {
         
         image.unlockFocus()
         return image
+    }
+    
+    func buildSpectrumColors(from startColor: NSColor, endColor: NSColor) -> [NSColor] {
+        var spectrumColors = [NSColor]()
+        var (fromRed, fromGreen, fromBlue) = (CGFloat(0.0), CGFloat(0.0), CGFloat(0.0))
+        var (toRed, toGreen, toBlue) = (CGFloat(0.0), CGFloat(0.0), CGFloat(0.0))
+        
+        startColor.getRed(&fromRed, green: &fromGreen, blue: &fromBlue, alpha: nil)
+        endColor.getRed(&toRed, green: &toGreen, blue: &toBlue, alpha: nil)
+        
+        let numberOfColours = Configuration.numberOfSpectrumColours
+        let dRed = (toRed - fromRed) / CGFloat(numberOfColours - 1)
+        let dGreen = (toGreen - fromGreen) / CGFloat(numberOfColours - 1)
+        let dBlue = (toBlue - fromBlue) / CGFloat(numberOfColours - 1)
+        
+        for n in 0..<numberOfColours {
+            spectrumColors.append(NSColor(red: fromRed + CGFloat(n) * dRed,
+                                          green: fromGreen + CGFloat(n) * dGreen,
+                                          blue: fromBlue + CGFloat(n) * dBlue, alpha: 1.0))
+        }
+        
+        return spectrumColors
     }
 }
 
