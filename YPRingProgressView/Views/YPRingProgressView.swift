@@ -23,8 +23,15 @@ final public class YPRingProgressView: NSView {
     @IBInspectable public var ringWidth: CGFloat = 50 {
         didSet { updateRingWidth(animated: true) }
     }
+    
+    @IBInspectable public var ringShadowEnabled: Bool = true {
+        didSet { updateRingShadow(animated: true) }
+    }
+    @IBInspectable public var ringShadowColor: NSColor = .black {
+        didSet { updateRingShadow(animated: true) }
+    }
     @IBInspectable public var ringShadowOpacity: CGFloat = 0 {
-        didSet { updateRingShadowOpacity(animated: true) }
+        didSet { updateRingShadow(animated: true) }
     }
     
     @IBInspectable public var ringStartColor: NSColor = .red {
@@ -192,11 +199,14 @@ private extension YPRingProgressView {
         CATransaction.commit()
     }
     
-    func updateRingShadowOpacity(animated: Bool = false) {
+    func updateRingShadow(animated: Bool = false) {
         CATransaction.begin()
         CATransaction.setDisableActions(!animated)
         
-        ringDotLayer.shadowOpacity = min(max(Float(ringShadowOpacity), 0.0), 1.0)
+        let shadowOpacity = min(max(Float(ringShadowOpacity), 0.0), 1.0)
+        ringDotLayer.shadowOpacity = ringShadowEnabled ? shadowOpacity : 0.0
+        ringDotLayer.shadowColor = ringShadowColor.cgColor
+        
         CATransaction.commit()
     }
     
@@ -222,8 +232,8 @@ private extension YPRingProgressView {
         updateBackgroundColor()
         updateRingBackgroundColor()
         
+        updateRingShadow()
         updateRingGradientImage()
-        updateRingShadowOpacity()
     }
     
     func updateBackgroundColor() {
@@ -316,7 +326,7 @@ public extension YPRingProgressView {
         super.viewDidChangeBackingProperties()
 
         if let scaleFactor = window?.backingScaleFactor, scaleFactor > 0 {
-            [rootLayer, backgroundLayer, ringBackgroundLayer, ringForegroundLayer, ringGradientLayer]
+            [rootLayer, backgroundLayer, ringBackgroundLayer, ringGradientLayer, ringDotLayer, ringForegroundLayer, ringForegroundMaskLayer]
                 .forEach { $0.contentsScale = scaleFactor }
         }
     }
