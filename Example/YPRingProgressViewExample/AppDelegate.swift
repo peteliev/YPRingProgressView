@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  YPRingProgressView
+//  YPRingProgressViewExample
 //
-//  Created by Zhenya Peteliev on 1/20/19.
+//  Created by Zhenya Peteliev on 1/29/19.
 //  Copyright © 2019 Zhenya Peteliev. All rights reserved.
 //
 

@@ -20,17 +20,17 @@ final public class YPRingProgressView: NSView {
     @IBInspectable public var progress: CGFloat = 0 {
         didSet { updateProgress() }
     }
-    @IBInspectable public var ringWidth: CGFloat = 50 {
+    @IBInspectable public var ringWidth: CGFloat = 20 {
         didSet { updateRingWidth(animated: true) }
     }
     
-    @IBInspectable public var ringShadowEnabled: Bool = true {
+    @IBInspectable public var ringShadowEnabled: Bool = false {
         didSet { updateRingShadow(animated: true) }
     }
     @IBInspectable public var ringShadowColor: NSColor = .black {
         didSet { updateRingShadow(animated: true) }
     }
-    @IBInspectable public var ringShadowOpacity: CGFloat = 0 {
+    @IBInspectable public var ringShadowOpacity: CGFloat = 0.5 {
         didSet { updateRingShadow(animated: true) }
     }
     
@@ -43,7 +43,7 @@ final public class YPRingProgressView: NSView {
     @IBInspectable public var ringBackgroundColor: NSColor = .white {
         didSet { updateRingBackgroundColor() }
     }
-    @IBInspectable public var backgroundColor: NSColor = .green {
+    @IBInspectable public var backgroundColor: NSColor = .clear {
         didSet { updateBackgroundColor() }
     }
     
@@ -156,7 +156,8 @@ private extension YPRingProgressView {
         ringDotLayer.shadowOffset = NSSize(width: -5, height: 0)
         
         ringDotLayer.disableActions(for: basicDisabledKeypathes)
-        ringDotLayer.actions = ["frame": CABasicAnimation(), "cornerRadius": CABasicAnimation()]
+        ringDotLayer.actions = ["frame": CABasicAnimation(), "cornerRadius": CABasicAnimation(),
+                                "bounds": CABasicAnimation(), "position": CABasicAnimation()]
     }
 }
 
@@ -215,7 +216,7 @@ private extension YPRingProgressView {
         let numberOfColours = spectrumColors.count
         let ringRect = buildRingRect(from: bounds)
         let ringDimension = ringRect.width
-        let ringWidthWithInset = ringWidth + ringWidth / 15
+        let ringWidthWithInset = ringWidth + ringWidth / 10
         
         let containsDot = 2 * CGFloat.pi * ringDimension / ringWidthWithInset
         let colorIndex = Int((CGFloat(numberOfColours) / containsDot) * (containsDot - 0.5))

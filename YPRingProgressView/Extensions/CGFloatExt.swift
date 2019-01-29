@@ -8,15 +8,13 @@
 
 import Foundation
 
-let π = CGFloat(Double.pi)
-
 public extension CGFloat {
 
     public func degreesToRadians() -> CGFloat {
-        return π * self / 180.0
+        return .pi * self / 180.0
     }
 
     public func radiansToDegrees() -> CGFloat {
-        return self * 180.0 / π
+        return self * 180.0 / .pi
     }
 }

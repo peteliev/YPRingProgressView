@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="YPRingProgressView" id="1Xt-HY-uBw">
+                            <menuItem title="YPRingProgressViewExample" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="YPRingProgressView" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="YPRingProgressViewExample" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About YPRingProgressView" id="5kV-Vb-QxS">
+                                        <menuItem title="About YPRingProgressViewExample" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide YPRingProgressView" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide YPRingProgressViewExample" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit YPRingProgressView" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit YPRingProgressViewExample" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -660,7 +660,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="YPRingProgressView Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="YPRingProgressViewExample Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -674,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="YPRingProgressView" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="YPRingProgressViewExample" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -704,94 +704,105 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="YPRingProgressView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="YPRingProgressViewExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="437"/>
+                        <rect key="frame" x="0.0" y="0.0" width="492" height="495"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="zKW-vy-1Id" customClass="YPRingProgressView" customModule="YPRingProgressView" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="252" width="480" height="185"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="aQa-dB-Azn" customClass="YPRingProgressView" customModule="YPRingProgressView">
+                                <rect key="frame" x="0.0" y="246" width="492" height="249"/>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-G0-fM9">
-                                <rect key="frame" x="18" y="203" width="444" height="19"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Progress:" id="m8U-cg-XhI">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6as-gO-QaC">
+                                <rect key="frame" x="18" y="207" width="456" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Progress:" id="TCu-IF-Mg6">
                                     <font key="font" metaFont="systemSemibold" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FF7-tz-fvy">
-                                <rect key="frame" x="18" y="176" width="444" height="19"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="4y4-d9-7bH"/>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fxq-fc-ZpR">
+                                <rect key="frame" x="18" y="180" width="456" height="19"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="6mI-H3-znl"/>
                                 <connections>
-                                    <action selector="progressSliderDidChangeValue:" target="XfG-lQ-9wD" id="mje-Z7-a0I"/>
+                                    <action selector="progressSliderDidChangeValue:" target="XfG-lQ-9wD" id="KzQ-e3-muQ"/>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dc7-YV-1Hc">
-                                <rect key="frame" x="18" y="129" width="444" height="19"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring width:" id="vqy-3W-lLh">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yuU-Nf-5X0">
+                                <rect key="frame" x="18" y="143" width="456" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring width:" id="Zc0-aB-JZp">
                                     <font key="font" metaFont="systemSemibold" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NCO-eG-v0p">
-                                <rect key="frame" x="18" y="102" width="444" height="19"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="50" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="fAZ-hc-1P6"/>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-mg-uTO">
+                                <rect key="frame" x="18" y="116" width="456" height="19"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="20" maxValue="50" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="X51-2j-Cka"/>
                                 <connections>
-                                    <action selector="ringWidthSliderDidChangeValue:" target="XfG-lQ-9wD" id="6Y7-wy-r4R"/>
+                                    <action selector="ringWidthSliderDidChangeValue:" target="XfG-lQ-9wD" id="lUb-Y1-jcS"/>
                                 </connections>
                             </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0c8-fB-Ic1">
-                                <rect key="frame" x="18" y="55" width="444" height="19"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring shadow opacity:" id="s1U-Jj-RNR">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puj-aP-io9">
+                                <rect key="frame" x="18" y="18" width="456" height="18"/>
+                                <buttonCell key="cell" type="check" title="Shadow enabled" bezelStyle="regularSquare" imagePosition="left" inset="2" id="446-q0-ogI">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ringShadowEnabled:" target="XfG-lQ-9wD" id="d7S-RO-BEl"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-Du-ybG">
+                                <rect key="frame" x="18" y="79" width="456" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring shadow opacity:" id="pem-lh-fdU">
                                     <font key="font" metaFont="systemSemibold" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NwR-pe-RAn">
-                                <rect key="frame" x="18" y="28" width="444" height="19"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="bc9-bE-bUh"/>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-Wa-fe2">
+                                <rect key="frame" x="18" y="52" width="456" height="19"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="eqE-DO-SrZ"/>
                                 <connections>
-                                    <action selector="ringShadowOpacitySliderDidChangeValue:" target="XfG-lQ-9wD" id="KtC-cS-4Rh"/>
+                                    <action selector="ringShadowOpacitySliderDidChangeValue:" target="XfG-lQ-9wD" id="0Gu-ez-Pg6"/>
                                 </connections>
                             </slider>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" constant="20" id="0YD-Fv-OVE"/>
-                            <constraint firstItem="NCO-eG-v0p" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="7kM-Pu-RI9"/>
-                            <constraint firstItem="zKW-vy-1Id" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9N3-iU-TKK"/>
-                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="BuO-PJ-rZK"/>
-                            <constraint firstItem="0c8-fB-Ic1" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="Cgy-yD-sgX"/>
-                            <constraint firstItem="0c8-fB-Ic1" firstAttribute="top" secondItem="NCO-eG-v0p" secondAttribute="bottom" constant="30" id="EWb-1T-Dvv"/>
-                            <constraint firstItem="0c8-fB-Ic1" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="L0Y-Qd-rZ6"/>
-                            <constraint firstItem="NwR-pe-RAn" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="LrB-27-puh"/>
-                            <constraint firstItem="VMi-G0-fM9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="NiN-iV-Gs5"/>
-                            <constraint firstAttribute="trailing" secondItem="zKW-vy-1Id" secondAttribute="trailing" id="OIb-Xn-MnB"/>
-                            <constraint firstItem="FF7-tz-fvy" firstAttribute="top" secondItem="VMi-G0-fM9" secondAttribute="bottom" constant="10" id="PIi-NY-JdU"/>
-                            <constraint firstItem="NwR-pe-RAn" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="TpE-Kg-7sk"/>
-                            <constraint firstAttribute="bottom" secondItem="NwR-pe-RAn" secondAttribute="bottom" constant="30" id="WHo-1e-mVv"/>
-                            <constraint firstItem="FF7-tz-fvy" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="XBl-fp-xEy"/>
-                            <constraint firstItem="zKW-vy-1Id" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="gHN-ag-sZZ"/>
-                            <constraint firstItem="NCO-eG-v0p" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="ij9-DW-4Yr"/>
-                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="top" secondItem="FF7-tz-fvy" secondAttribute="bottom" constant="30" id="k4K-2K-nLF"/>
-                            <constraint firstItem="Dc7-YV-1Hc" firstAttribute="trailing" secondItem="VMi-G0-fM9" secondAttribute="trailing" id="oiD-6B-5XG"/>
-                            <constraint firstItem="NCO-eG-v0p" firstAttribute="top" secondItem="Dc7-YV-1Hc" secondAttribute="bottom" constant="10" id="pl4-X2-NaC"/>
-                            <constraint firstItem="VMi-G0-fM9" firstAttribute="top" secondItem="zKW-vy-1Id" secondAttribute="bottom" constant="30" id="rUK-le-rhb"/>
-                            <constraint firstItem="NwR-pe-RAn" firstAttribute="top" secondItem="0c8-fB-Ic1" secondAttribute="bottom" constant="10" id="vbT-qT-CIs"/>
-                            <constraint firstItem="FF7-tz-fvy" firstAttribute="leading" secondItem="VMi-G0-fM9" secondAttribute="leading" id="z4X-il-nch"/>
+                            <constraint firstItem="puj-aP-io9" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="19t-gS-lR0"/>
+                            <constraint firstItem="Fxq-fc-ZpR" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="9Ef-Zd-foI"/>
+                            <constraint firstItem="z3n-Du-ybG" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="Buc-7K-pD5"/>
+                            <constraint firstItem="Fxq-fc-ZpR" firstAttribute="top" secondItem="6as-gO-QaC" secondAttribute="bottom" constant="10" id="FIg-LR-oix"/>
+                            <constraint firstItem="z3n-Du-ybG" firstAttribute="top" secondItem="Ndp-mg-uTO" secondAttribute="bottom" constant="20" id="FSh-Jc-gjD"/>
+                            <constraint firstItem="puj-aP-io9" firstAttribute="top" secondItem="eV1-Wa-fe2" secondAttribute="bottom" constant="20" id="HEU-ya-fFc"/>
+                            <constraint firstItem="6as-gO-QaC" firstAttribute="top" secondItem="aQa-dB-Azn" secondAttribute="bottom" constant="20" id="HpP-8j-4dB"/>
+                            <constraint firstItem="z3n-Du-ybG" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="ITQ-oj-cfb"/>
+                            <constraint firstItem="Ndp-mg-uTO" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="Icq-xq-lcG"/>
+                            <constraint firstItem="Fxq-fc-ZpR" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="J1B-ko-Dbb"/>
+                            <constraint firstItem="eV1-Wa-fe2" firstAttribute="top" secondItem="z3n-Du-ybG" secondAttribute="bottom" constant="10" id="K61-y7-gLp"/>
+                            <constraint firstItem="yuU-Nf-5X0" firstAttribute="top" secondItem="Fxq-fc-ZpR" secondAttribute="bottom" constant="20" id="TOY-cd-ksQ"/>
+                            <constraint firstAttribute="trailing" secondItem="aQa-dB-Azn" secondAttribute="trailing" id="U2p-Cl-6ld"/>
+                            <constraint firstItem="yuU-Nf-5X0" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="Uw3-D3-DK4"/>
+                            <constraint firstItem="Ndp-mg-uTO" firstAttribute="top" secondItem="yuU-Nf-5X0" secondAttribute="bottom" constant="10" id="WD9-aU-o7H"/>
+                            <constraint firstItem="yuU-Nf-5X0" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="Wsh-Ya-f7L"/>
+                            <constraint firstItem="eV1-Wa-fe2" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="Z4l-3a-bhh"/>
+                            <constraint firstAttribute="bottom" secondItem="puj-aP-io9" secondAttribute="bottom" constant="20" id="aLD-UB-U1b"/>
+                            <constraint firstItem="aQa-dB-Azn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bDF-Mo-wuU"/>
+                            <constraint firstItem="eV1-Wa-fe2" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="eQf-e2-2Ff"/>
+                            <constraint firstItem="6as-gO-QaC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ggs-96-Fia"/>
+                            <constraint firstItem="Ndp-mg-uTO" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="hWv-5N-hhD"/>
+                            <constraint firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" constant="20" id="pHU-Pq-vNE"/>
+                            <constraint firstItem="puj-aP-io9" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="q99-eP-qVs"/>
+                            <constraint firstItem="aQa-dB-Azn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="t3m-Nm-hgD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressSlider" destination="FF7-tz-fvy" id="Gye-dM-IVI"/>
-                        <outlet property="ringProgressView" destination="zKW-vy-1Id" id="xi4-nM-rga"/>
-                        <outlet property="ringWidthSlider" destination="NCO-eG-v0p" id="hqS-Cp-LdU"/>
+                        <outlet property="ringProgressView" destination="aQa-dB-Azn" id="qRL-kk-CWc"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="738.5"/>
+            <point key="canvasLocation" x="75" y="860"/>
         </scene>
     </scenes>
 </document>
