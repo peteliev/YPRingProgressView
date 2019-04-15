@@ -763,7 +763,7 @@
                             </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-Wa-fe2">
                                 <rect key="frame" x="18" y="164" width="456" height="19"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="eqE-DO-SrZ"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="eqE-DO-SrZ"/>
                                 <connections>
                                     <action selector="ringShadowOpacitySliderDidChangeValue:" target="XfG-lQ-9wD" id="0Gu-ez-Pg6"/>
                                 </connections>

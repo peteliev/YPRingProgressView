@@ -155,7 +155,8 @@ private extension YPRingProgressView {
         ringDotLayer.shadowRadius = 5.0
         ringDotLayer.shadowOffset = NSSize(width: -5, height: 0)
         
-        ringDotLayer.disableActions(for: basicDisabledKeypathes)
+        let disabledKeypathes = basicDisabledKeypathes + ["backgroundColor"]
+        ringDotLayer.disableActions(for: disabledKeypathes)
         ringDotLayer.actions = ["frame": CABasicAnimation(), "cornerRadius": CABasicAnimation(),
                                 "bounds": CABasicAnimation(), "position": CABasicAnimation()]
     }
