@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
 
 
-<p align="center"><img src="https://github.com/peteliev/YPRingProgressView/blob/develop/Resources/YPRingProgressView.gif" height="818" width="635"/></p>
+<p align="center"><img src="https://github.com/peteliev/YPRingProgressView/blob/develop/Resources/YPRingProgressView.gif" height="545" width="423"/></p>
 
 ## Description
 
