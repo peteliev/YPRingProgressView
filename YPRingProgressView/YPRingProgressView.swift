@@ -99,7 +99,7 @@ final public class YPRingProgressView: NSView {
 // MARK: - NSView
 public extension YPRingProgressView {
     
-    override public var frame: NSRect {
+    override var frame: NSRect {
         didSet { updateLayers() }
     }
 }
@@ -184,6 +184,8 @@ private extension YPRingProgressView {
         
         let gradientImage = buildGradientImage(from: spectrumColors, radius: radius)
         ringGradientLayer.contents = gradientImage
+        
+        updateDotLayer()
     }
     
     func updateRingWidth(animated: Bool = false) {

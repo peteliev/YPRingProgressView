@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -619,7 +620,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -706,14 +707,14 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="YPRingProgressViewExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="492" height="495"/>
+                        <rect key="frame" x="0.0" y="0.0" width="492" height="824"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="aQa-dB-Azn" customClass="YPRingProgressView" customModule="YPRingProgressView">
-                                <rect key="frame" x="0.0" y="246" width="492" height="249"/>
+                                <rect key="frame" x="0.0" y="358" width="492" height="466"/>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6as-gO-QaC">
-                                <rect key="frame" x="18" y="207" width="456" height="19"/>
+                                <rect key="frame" x="18" y="319" width="456" height="19"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Progress:" id="TCu-IF-Mg6">
                                     <font key="font" metaFont="systemSemibold" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -721,14 +722,14 @@
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fxq-fc-ZpR">
-                                <rect key="frame" x="18" y="180" width="456" height="19"/>
+                                <rect key="frame" x="18" y="292" width="456" height="19"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="6mI-H3-znl"/>
                                 <connections>
                                     <action selector="progressSliderDidChangeValue:" target="XfG-lQ-9wD" id="KzQ-e3-muQ"/>
                                 </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yuU-Nf-5X0">
-                                <rect key="frame" x="18" y="143" width="456" height="19"/>
+                                <rect key="frame" x="18" y="255" width="456" height="19"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Ring width:" id="Zc0-aB-JZp">
                                     <font key="font" metaFont="systemSemibold" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -736,14 +737,14 @@
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-mg-uTO">
-                                <rect key="frame" x="18" y="116" width="456" height="19"/>
+                                <rect key="frame" x="18" y="228" width="456" height="19"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="20" maxValue="50" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="X51-2j-Cka"/>
                                 <connections>
                                     <action selector="ringWidthSliderDidChangeValue:" target="XfG-lQ-9wD" id="lUb-Y1-jcS"/>
                                 </connections>
                             </slider>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="puj-aP-io9">
-                                <rect key="frame" x="18" y="18" width="456" height="18"/>
+                                <rect key="frame" x="351" y="128" width="123" height="18"/>
                                 <buttonCell key="cell" type="check" title="Shadow enabled" bezelStyle="regularSquare" imagePosition="left" inset="2" id="446-q0-ogI">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -753,7 +754,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-Du-ybG">
-                                <rect key="frame" x="18" y="79" width="456" height="19"/>
+                                <rect key="frame" x="18" y="191" width="456" height="19"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Ring shadow opacity:" id="pem-lh-fdU">
                                     <font key="font" metaFont="systemSemibold" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -761,39 +762,130 @@
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-Wa-fe2">
-                                <rect key="frame" x="18" y="52" width="456" height="19"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="eqE-DO-SrZ"/>
+                                <rect key="frame" x="18" y="164" width="456" height="19"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="eqE-DO-SrZ"/>
                                 <connections>
                                     <action selector="ringShadowOpacitySliderDidChangeValue:" target="XfG-lQ-9wD" id="0Gu-ez-Pg6"/>
                                 </connections>
                             </slider>
+                            <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="6G4-EF-0po">
+                                <rect key="frame" x="201" y="125" width="44" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="LU2-pw-NC6"/>
+                                    <constraint firstAttribute="width" constant="44" id="UCX-Ee-arH"/>
+                                </constraints>
+                                <color key="color" red="0.074509803921568626" green="0.32941176470588235" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeRingStartColor:" target="XfG-lQ-9wD" id="DGA-M2-h3Y"/>
+                                </connections>
+                            </colorWell>
+                            <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="yKx-kF-OfL">
+                                <rect key="frame" x="201" y="86" width="44" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="GZ7-Fj-R3b"/>
+                                    <constraint firstAttribute="height" constant="23" id="mgR-rn-If5"/>
+                                </constraints>
+                                <color key="color" red="0.50196078431372548" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeRingEndColor:" target="XfG-lQ-9wD" id="2Bs-v1-YaC"/>
+                                </connections>
+                            </colorWell>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="THm-3m-jwe">
+                                <rect key="frame" x="18" y="127" width="119" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring start color:" id="Uga-Gw-Zvk">
+                                    <font key="font" metaFont="systemSemibold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="CgN-oi-pes">
+                                <rect key="frame" x="201" y="47" width="44" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="hzN-tn-0Rm"/>
+                                    <constraint firstAttribute="height" constant="23" id="qB0-rs-iCK"/>
+                                </constraints>
+                                <color key="color" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeBackgroundColor:" target="XfG-lQ-9wD" id="YKl-WP-jed"/>
+                                </connections>
+                            </colorWell>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CFa-ug-8yh">
+                                <rect key="frame" x="18" y="49" width="135" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Background color:" id="buy-ls-AHz">
+                                    <font key="font" metaFont="systemSemibold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g0k-dJ-qx6">
+                                <rect key="frame" x="18" y="88" width="112" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring end color:" id="IZw-Kr-iwV">
+                                    <font key="font" metaFont="systemSemibold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="IMT-fq-C62">
+                                <rect key="frame" x="201" y="8" width="44" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="6zH-o5-eqT"/>
+                                    <constraint firstAttribute="width" constant="44" id="lw1-9m-16V"/>
+                                </constraints>
+                                <color key="color" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeRingBackgroundColor:" target="XfG-lQ-9wD" id="u8G-Wj-JOD"/>
+                                </connections>
+                            </colorWell>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-1G-P4p">
+                                <rect key="frame" x="18" y="10" width="170" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Ring background color:" id="moY-KD-tYy">
+                                    <font key="font" metaFont="systemSemibold" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="puj-aP-io9" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="19t-gS-lR0"/>
+                            <constraint firstItem="CgN-oi-pes" firstAttribute="centerX" secondItem="IMT-fq-C62" secondAttribute="centerX" id="05a-Y1-76Z"/>
+                            <constraint firstAttribute="bottom" secondItem="Uc0-1G-P4p" secondAttribute="bottom" constant="10" id="3AC-yc-f7Y"/>
+                            <constraint firstItem="g0k-dJ-qx6" firstAttribute="top" secondItem="THm-3m-jwe" secondAttribute="bottom" constant="20" id="704-M3-Ngs"/>
+                            <constraint firstItem="IMT-fq-C62" firstAttribute="centerY" secondItem="Uc0-1G-P4p" secondAttribute="centerY" id="7ZC-XG-Vkp"/>
                             <constraint firstItem="Fxq-fc-ZpR" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="9Ef-Zd-foI"/>
+                            <constraint firstItem="THm-3m-jwe" firstAttribute="top" secondItem="eV1-Wa-fe2" secondAttribute="bottom" constant="20" id="9wz-J5-kz9"/>
                             <constraint firstItem="z3n-Du-ybG" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="Buc-7K-pD5"/>
+                            <constraint firstItem="Uc0-1G-P4p" firstAttribute="top" secondItem="CFa-ug-8yh" secondAttribute="bottom" constant="20" id="D8D-fu-b1n"/>
                             <constraint firstItem="Fxq-fc-ZpR" firstAttribute="top" secondItem="6as-gO-QaC" secondAttribute="bottom" constant="10" id="FIg-LR-oix"/>
                             <constraint firstItem="z3n-Du-ybG" firstAttribute="top" secondItem="Ndp-mg-uTO" secondAttribute="bottom" constant="20" id="FSh-Jc-gjD"/>
-                            <constraint firstItem="puj-aP-io9" firstAttribute="top" secondItem="eV1-Wa-fe2" secondAttribute="bottom" constant="20" id="HEU-ya-fFc"/>
                             <constraint firstItem="6as-gO-QaC" firstAttribute="top" secondItem="aQa-dB-Azn" secondAttribute="bottom" constant="20" id="HpP-8j-4dB"/>
                             <constraint firstItem="z3n-Du-ybG" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="ITQ-oj-cfb"/>
                             <constraint firstItem="Ndp-mg-uTO" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="Icq-xq-lcG"/>
                             <constraint firstItem="Fxq-fc-ZpR" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="J1B-ko-Dbb"/>
                             <constraint firstItem="eV1-Wa-fe2" firstAttribute="top" secondItem="z3n-Du-ybG" secondAttribute="bottom" constant="10" id="K61-y7-gLp"/>
+                            <constraint firstItem="puj-aP-io9" firstAttribute="trailing" secondItem="eV1-Wa-fe2" secondAttribute="trailing" id="Lt2-V3-3gb"/>
+                            <constraint firstItem="CFa-ug-8yh" firstAttribute="leading" secondItem="g0k-dJ-qx6" secondAttribute="leading" id="Lwm-dd-wQA"/>
                             <constraint firstItem="yuU-Nf-5X0" firstAttribute="top" secondItem="Fxq-fc-ZpR" secondAttribute="bottom" constant="20" id="TOY-cd-ksQ"/>
                             <constraint firstAttribute="trailing" secondItem="aQa-dB-Azn" secondAttribute="trailing" id="U2p-Cl-6ld"/>
                             <constraint firstItem="yuU-Nf-5X0" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="Uw3-D3-DK4"/>
                             <constraint firstItem="Ndp-mg-uTO" firstAttribute="top" secondItem="yuU-Nf-5X0" secondAttribute="bottom" constant="10" id="WD9-aU-o7H"/>
+                            <constraint firstItem="yKx-kF-OfL" firstAttribute="centerY" secondItem="g0k-dJ-qx6" secondAttribute="centerY" id="Wkp-gd-IR7"/>
                             <constraint firstItem="yuU-Nf-5X0" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="Wsh-Ya-f7L"/>
+                            <constraint firstItem="6G4-EF-0po" firstAttribute="centerY" secondItem="THm-3m-jwe" secondAttribute="centerY" id="YXP-Rf-DM7"/>
                             <constraint firstItem="eV1-Wa-fe2" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="Z4l-3a-bhh"/>
-                            <constraint firstAttribute="bottom" secondItem="puj-aP-io9" secondAttribute="bottom" constant="20" id="aLD-UB-U1b"/>
+                            <constraint firstItem="puj-aP-io9" firstAttribute="centerY" secondItem="THm-3m-jwe" secondAttribute="centerY" id="ZQ6-eN-Ktz"/>
                             <constraint firstItem="aQa-dB-Azn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bDF-Mo-wuU"/>
+                            <constraint firstItem="IMT-fq-C62" firstAttribute="leading" secondItem="Uc0-1G-P4p" secondAttribute="trailing" constant="15" id="djt-K5-plL"/>
+                            <constraint firstItem="CFa-ug-8yh" firstAttribute="top" secondItem="g0k-dJ-qx6" secondAttribute="bottom" constant="20" id="eHd-3b-xfB"/>
                             <constraint firstItem="eV1-Wa-fe2" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="eQf-e2-2Ff"/>
                             <constraint firstItem="6as-gO-QaC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ggs-96-Fia"/>
                             <constraint firstItem="Ndp-mg-uTO" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="hWv-5N-hhD"/>
                             <constraint firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" constant="20" id="pHU-Pq-vNE"/>
-                            <constraint firstItem="puj-aP-io9" firstAttribute="trailing" secondItem="6as-gO-QaC" secondAttribute="trailing" id="q99-eP-qVs"/>
+                            <constraint firstItem="CFa-ug-8yh" firstAttribute="leading" secondItem="Uc0-1G-P4p" secondAttribute="leading" id="pUc-8u-wXJ"/>
                             <constraint firstItem="aQa-dB-Azn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="t3m-Nm-hgD"/>
+                            <constraint firstItem="THm-3m-jwe" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="tlP-yD-vLs"/>
+                            <constraint firstItem="CgN-oi-pes" firstAttribute="centerY" secondItem="CFa-ug-8yh" secondAttribute="centerY" id="twf-q0-HM9"/>
+                            <constraint firstItem="yKx-kF-OfL" firstAttribute="centerX" secondItem="IMT-fq-C62" secondAttribute="centerX" id="ucx-fd-K0X"/>
+                            <constraint firstItem="6G4-EF-0po" firstAttribute="centerX" secondItem="IMT-fq-C62" secondAttribute="centerX" id="wDe-Eq-uaU"/>
+                            <constraint firstItem="g0k-dJ-qx6" firstAttribute="leading" secondItem="6as-gO-QaC" secondAttribute="leading" id="wZq-Zc-mLT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -802,7 +894,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="860"/>
+            <point key="canvasLocation" x="75" y="1024"/>
         </scene>
     </scenes>
 </document>
